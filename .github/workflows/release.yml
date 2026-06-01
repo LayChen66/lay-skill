@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ github.ref_name }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh release create "$TAG_NAME" \
+            --repo "$REPOSITORY" \
+            --title "$TAG_NAME - Initial Web3 AI Skills Collection" \
+            --notes "Initial release of lay-skill, including:
+
+- haven-evm-wallet.skill
+- haven-bsc-defi.skill
+- haven-yields-scout.skill
+- README, MIT license, and skill workflow examples
+
+This version focuses on reusable, safety-aware AI skill workflows for EVM wallet operations, BNB Chain DeFi, and stablecoin yield scouting."
