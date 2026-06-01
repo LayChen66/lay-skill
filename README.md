@@ -79,11 +79,10 @@ For wallet and DeFi workflows:
 ├── examples/
 ├── haven-bsc-defi.skill
 ├── haven-evm-wallet.skill
-├── haven-yields-scout.skill
-└── haven-bsc-defi/
+└── haven-yields-scout.skill
 ```
 
-The `.skill` files are packaged skills. The `haven-bsc-defi/` directory contains the unpacked source for the BNB Chain DeFi skill.
+The `.skill` files are packaged skills that can be imported into skill-compatible agent environments.
 
 ## Roadmap
 
