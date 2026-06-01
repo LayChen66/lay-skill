@@ -15,6 +15,14 @@ The project focuses on practical workflows such as:
 - Stablecoin yield discovery and scoring across DeFi protocols
 - On-chain research patterns for builders, maintainers, and analysts
 
+## What Is Haven?
+
+Haven is the namespace used for this repository's Web3 AI skills.
+
+As a common English noun, "haven" means a harbor, refuge, or safe environment. That meaning reflects the design goal of these skills: to make agent-assisted wallet, DeFi, and yield research workflows more structured, reviewable, and safety-aware.
+
+In this repository, Haven does not refer to a separate blockchain protocol. Each skill documents its own supported chains, protocols, dependencies, and safety boundaries.
+
 ## Included Skills
 
 | Skill | Purpose |
@@ -46,6 +54,10 @@ cd lay-skill
 
 Then import one or more `.skill` files into your agent environment.
 
+## Examples
+
+See [`examples/`](./examples/) for example prompts, expected output structures, and safety notes for each included skill.
+
 ## Security
 
 These skills are intended for research, development, and carefully scoped automation.
@@ -64,6 +76,7 @@ For wallet and DeFi workflows:
 
 ```text
 .
+├── examples/
 ├── haven-bsc-defi.skill
 ├── haven-evm-wallet.skill
 ├── haven-yields-scout.skill
@@ -74,7 +87,7 @@ The `.skill` files are packaged skills. The `haven-bsc-defi/` directory contains
 
 ## Roadmap
 
-- Add examples for each skill.
+- Expand examples for each skill.
 - Add test prompts and expected outputs.
 - Add documentation for skill package structure.
 - Add more EVM and DeFi workflow skills.
