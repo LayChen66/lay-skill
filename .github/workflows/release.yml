@@ -2,8 +2,6 @@ name: Release
 
 on:
   push:
-    branches:
-      - main
     tags:
       - "v*"
 
@@ -17,24 +15,9 @@ jobs:
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-          DEFAULT_TAG_NAME: v0.1.0
+          TAG_NAME: ${{ github.ref_name }}
           REPOSITORY: ${{ github.repository }}
-          RELEASE_NOTES: |
-            Initial release of lay-skill, including:
-
-            - haven-evm-wallet.skill
-            - haven-bsc-defi.skill
-            - haven-yields-scout.skill
-            - README, MIT license, and skill workflow examples
-
-            This version focuses on reusable, safety-aware AI skill workflows for EVM wallet operations, BNB Chain DeFi, and stablecoin yield scouting.
         run: |
-          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
-            TAG_NAME="$GITHUB_REF_NAME"
-          else
-            TAG_NAME="$DEFAULT_TAG_NAME"
-          fi
-
           if gh release view "$TAG_NAME" --repo "$REPOSITORY" >/dev/null 2>&1; then
             echo "Release $TAG_NAME already exists."
             exit 0
@@ -42,5 +25,5 @@ jobs:
 
           gh release create "$TAG_NAME" \
             --repo "$REPOSITORY" \
-            --title "$TAG_NAME - Initial Web3 AI Skills Collection" \
-            --notes "$RELEASE_NOTES"
+            --title "$TAG_NAME" \
+            --generate-notes
