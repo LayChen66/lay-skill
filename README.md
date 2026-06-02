@@ -23,6 +23,15 @@ As a common English noun, "haven" means a harbor, refuge, or safe environment. T
 
 In this repository, Haven does not refer to a separate blockchain protocol. Each skill documents its own supported chains, protocols, dependencies, and safety boundaries.
 
+## Used By
+
+The skills in this repository are used by the Haven project to support structured Web3 AI workflows.
+
+- Haven website: [https://haven.financial/](https://haven.financial/)
+- Haven demo: [https://haven.financial/demo/](https://haven.financial/demo/)
+
+The public demo shows a chat-style AI agent using OpenRouter and local skills to route natural-language requests into structured, reviewable workflows.
+
 ## Included Skills
 
 | Skill | Purpose |
